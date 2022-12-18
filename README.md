@@ -33,11 +33,21 @@ aws lambda invoke --region=eu-west-1 --function-name=welcome output.txt --profil
 
 ## Documentation
 
+### The Hashicorp Regsitry 
+
 Everything I need to know is in the [hashicorp registery](https://registry.terraform.io/)   
 The registry also includes reusable modules (that take care of multiple things) 
 
 For example, the aws-lambda-module - automatically picks up on package.json changes and installs the desired dependencies.   
 There is no need to persist node_modules
+
+### Documentation is not at latest standard
+
+If you follow the documentation, you will get warnings and deprecation notices. 
+I can only assume this means terraform is rapidly changing and all the plugins and their documentation cannot always keep up
+
+For example - one huge different is between quoted references. You should not use `"${module.some_module.some_resource}"` syntax, but instead simply 
+refer to the resource `module.some_module.some_resource`. The latter also supports autocomplete better.
 
 ## Persisting State
 

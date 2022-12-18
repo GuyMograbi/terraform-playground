@@ -17,3 +17,7 @@ provider "aws" {
   region = var.aws_region
   profile = var.aws_profile
 }
+
+output "base_url" {
+  value = "${aws_api_gateway_deployment.example.invoke_url}"
+}
