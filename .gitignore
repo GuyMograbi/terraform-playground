@@ -6,3 +6,5 @@ terraform.tfstate.backup
 .terraform
 output
 output.txt
+node_modules
+package-lock.json
