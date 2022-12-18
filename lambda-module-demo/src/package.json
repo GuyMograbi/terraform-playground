@@ -1,0 +1,9 @@
+{
+    "name": "my-lambda-module-demo",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "node-uuid": "^1.4.8"
+    }
+}

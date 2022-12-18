@@ -26,14 +26,18 @@ terraform destroy
 
 **Run Lambda function from cli**
 ```
-aws lambda invoke --region=eu-west-1 --function-name=welcome output.txt
+aws lambda invoke --region=eu-west-1 --function-name=welcome output.txt --profile=tf-demo
 ```
 
 # Things I Learned
 
 ## Documentation
 
-Everything I need to know is in the [hashicorp registery](https://registry.terraform.io/)
+Everything I need to know is in the [hashicorp registery](https://registry.terraform.io/)   
+The registry also includes reusable modules (that take care of multiple things) 
+
+For example, the aws-lambda-module - automatically picks up on package.json changes and installs the desired dependencies.   
+There is no need to persist node_modules
 
 ## Persisting State
 
@@ -74,7 +78,11 @@ The format of this is simply
 # Resources
 
 1. https://medium.com/mlearning-ai/terraform-to-provision-aws-resource-s3-bucket-beginner-level-5dde3a8afdc4
-2. https://aws.amazon.com/blogs/database/managing-amazon-elasticache-with-terraform/ 
-3. https://www.youtube.com/watch?v=Lkm3v7UDlD8
-4. https://awspolicygen.s3.amazonaws.com/policygen.html
-5. https://registry.terraform.io/providers/hashicorp/aws/2.34.0/docs/guides/serverless-with-aws-lambda-and-api-gateway
+1. https://aws.amazon.com/blogs/database/managing-amazon-elasticache-with-terraform/ 
+1. https://www.youtube.com/watch?v=Lkm3v7UDlD8
+1. https://awspolicygen.s3.amazonaws.com/policygen.html
+1. https://registry.terraform.io/providers/hashicorp/aws/2.34.0/docs/guides/serverless-with-aws-lambda-and-api-gateway
+1. **Lambda Module**
+    1. https://registry.terraform.io/modules/terraform-aws-modules/lambda/aws/latest
+    1. https://www.youtube.com/watch?v=mUO5k_B5bJ4
+    1. https://registry.terraform.io/providers/hashicorp/aws/2.34.0/docs/guides/serverless-with-aws-lambda-and-api-gateway
