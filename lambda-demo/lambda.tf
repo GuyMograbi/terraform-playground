@@ -48,11 +48,11 @@ locals {
     lambda_zip_location = "output/welcome.zip"
 }
 
-# data "archive_file" "welcome" {
-#     type = "zip"
-#     source_file = "welcome.py"
-#     output_path = "${local.lambda_zip_location}"
-# }
+data "archive_file" "welcome" {
+    type = "zip"
+    source_file = "welcome.js"
+    output_path = "${local.lambda_zip_location}"
+}
 
 resource "aws_lambda_function" "test_lambda" {
     filename = "${local.lambda_zip_location}"
@@ -63,7 +63,7 @@ resource "aws_lambda_function" "test_lambda" {
     # This is used to identify changes in the code - which will trigger terraform to redeploy
     source_code_hash = "${filebase64sha256(local.lambda_zip_location)}"
 
-    runtime = "python3.7"
+    runtime = "nodejs18.x"
 
     environment {
         variables = {
