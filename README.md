@@ -24,6 +24,11 @@ terraform destroy
 
 ```
 
+**Run Lambda function from cli**
+```
+aws lambda invoke --region=eu-west-1 --function-name=welcome output.txt
+```
+
 # Things I Learned
 
 ## Documentation
