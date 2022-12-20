@@ -96,3 +96,4 @@ The format of this is simply
     1. https://registry.terraform.io/modules/terraform-aws-modules/lambda/aws/latest
     1. https://www.youtube.com/watch?v=mUO5k_B5bJ4
     1. https://registry.terraform.io/providers/hashicorp/aws/2.34.0/docs/guides/serverless-with-aws-lambda-and-api-gateway
+    1. Add Redis - https://github.com/udaysharma/terraform-aws-redis-lambda
