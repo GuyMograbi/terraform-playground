@@ -6,7 +6,7 @@ exports.hello = function (event, context, callback) {
         headers: {
             'Content-Type': 'text/html; charset=utf-8',
         },
-        body: "Hello world!",
+        body: `Hello ${process.env.mograbious}!`,
     };
     callback(null, response);
 };
